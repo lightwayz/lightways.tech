@@ -1,9 +1,20 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Lab() {
     return (
         <section className="py-40 text-center">
-            <h2 className="text-5xl">The Lightways Lab</h2>
-            <p className="text-neutral-400 mt-4">
-                Researching and building future systems
+            <motion.h2
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                className="text-6xl font-bold"
+            >
+                The Lightways Lab
+            </motion.h2>
+
+            <p className="mt-6 text-neutral-400">
+                Researching and building future intelligent systems.
             </p>
         </section>
     );

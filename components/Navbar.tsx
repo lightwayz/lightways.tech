@@ -4,7 +4,11 @@ import { motion } from "framer-motion";
 
 export default function Navbar() {
     return (
-        <nav className="fixed w-full top-0 z-50 backdrop-blur-lg bg-black/40 border-b border-neutral-800">
+        <motion.nav
+            initial={{ y: -80 }}
+            animate={{ y: 0 }}
+            className="fixed w-full top-0 z-50 backdrop-blur-lg bg-black/40 border-b border-neutral-800"
+        >
             <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
                 <h1 className="text-xl font-semibold tracking-wide">
                     Lightways.tech
@@ -24,6 +28,6 @@ export default function Navbar() {
                     </motion.button>
                 </div>
             </div>
-        </nav>
+        </motion.nav>
     );
 }
