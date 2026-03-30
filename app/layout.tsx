@@ -5,6 +5,7 @@ import SmoothScroll from "../lib/smoothScroll";
 import Cursor from "@/components/Cursor";
 import * as React from "react";
 import { Inter } from "next/font/google";
+import CustomCursor from "./components/CustomCursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,6 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <body className="{inter.className}bg-black text-white">
         <SmoothScroll />
         <Cursor />
+        <CustomCursor />
         <Navbar />
         {children}
         <Footer />
