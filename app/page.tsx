@@ -10,6 +10,7 @@ export default function Home() {
     return (
         <main>
             <Hero />
+            <div className="h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
             <Philosophy />
             <Services />
             <Capabilities />
