@@ -17,7 +17,7 @@ export default function CustomCursor() {
 
     return (
         <div
-            className="fixed w-6 h-6 bg-yellow-400 rounded-full pointer-events-none z-50 mix-blend-difference"
+            className="fixed w-6 h-6 bg-yellow-400 rounded-full pointer-events-none z-[9999] mix-blend-difference transition-transform duration-75"
             style={{
                 transform: `translate(${position.x}px, ${position.y}px)`
             }}
