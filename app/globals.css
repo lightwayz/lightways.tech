@@ -38,3 +38,10 @@ body {
   transform: translate(-50%, -50%);
   transition: transform 0.1s ease;
 }
+button, a {
+  transition: transform 0.2s ease;
+}
+
+button:active, a:active {
+  transform: scale(0.95);
+}

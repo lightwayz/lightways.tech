@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center px-6 max-w-7xl mx-auto overflow-hidden">
+        <section className="relative min-h-[90vh] md:min-h-screen flex items-center px-6 md:px-8 lg:px-12 max-w-7xl mx-auto overflow-hidden">
 
             {/* Background Glow */}
             <motion.div
@@ -22,7 +22,7 @@ export default function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
-                className="relative z-10"
+                className="relative z-10 w-full"
             >
 
                 {/* Headline */}
@@ -30,12 +30,12 @@ export default function Hero() {
                     initial={{ y: 80, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1 }}
-                    className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight"
+                    className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight"
                 >
                     <span className="block">We Build</span>
                     <span className="block text-yellow-400">
-            Intelligent Systems
-          </span>
+                        Intelligent Systems
+                    </span>
                     <span className="block">That Think.</span>
                 </motion.h1>
 
@@ -44,7 +44,7 @@ export default function Hero() {
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.3 }}
-                    className="mt-6 text-neutral-400 max-w-lg text-lg"
+                    className="mt-5 md:mt-6 text-neutral-400 max-w-md md:max-w-lg text-base md:text-lg leading-relaxed"
                 >
                     Human-centric AI, innovation labs, and startup ecosystems.
                 </motion.p>
@@ -54,12 +54,12 @@ export default function Hero() {
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.6 }}
-                    className="mt-8 flex gap-4"
+                    className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4"
                 >
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-yellow-400 text-black px-8 py-4 rounded-full font-medium"
+                        className="bg-yellow-400 text-black px-6 py-3 md:px-8 md:py-4 rounded-full font-medium"
                     >
                         Start Project
                     </motion.button>
@@ -67,7 +67,7 @@ export default function Hero() {
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="border border-neutral-700 px-8 py-4 rounded-full"
+                        className="border border-neutral-700 px-6 py-3 md:px-8 md:py-4 rounded-full"
                     >
                         Explore
                     </motion.button>
