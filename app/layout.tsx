@@ -4,6 +4,7 @@ import Footer from "@/app/components/Footer";
 import SmoothScroll from "@/app/components/SmoothScroll";
 import Cursor from "@/app/components/Cursor";
 import CustomCursor from "@/app/components/CustomCursor";
+import PageIntro from "@/app/components/PageIntro";
 
 import * as React from "react";
 import { Inter } from "next/font/google";
@@ -21,6 +22,7 @@ export default function RootLayout({
         <SmoothScroll>
             <CustomCursor />
             <Cursor />
+            <PageIntro />
             <Navbar />
 
             {children}

@@ -82,7 +82,7 @@ export default function Hero() {
                             }}
                             className="block"
                         >
-                            That Think.
+                            For Human Progress.
                         </motion.span>
                     </motion.h1>
                 </Reveal>
