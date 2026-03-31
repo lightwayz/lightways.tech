@@ -9,86 +9,129 @@ import Process from "@/app/components/Process";
 import Lab from "@/app/components/Lab";
 import CTA from "@/app/components/CTA";
 import Divider from "@/app/components/Divider";
-import { mediumMotion } from "@/lib/motion";
+import { smallMotion, mediumMotion, largeMotion } from "@/lib/motion";
 
 export default function Home() {
+    const brandLogos = ["brand1", "brand2", "brand3", "brand4", "brand5"];
+
     return (
         <main>
-            {/* Hero Section (already animates internally) */}
-            <section id="hero">
-                <Hero />
-            </section>
+            {/* Hero */}
+            <Hero />
 
+            {/* Divider */}
             <Divider />
 
-            {/* Philosophy Section */}
+            {/* Scrollable Brand Logos */}
             <motion.section
-                id="philosophy"
-                className="py-24"
+                id="brands"
+                className="py-12 overflow-x-auto whitespace-nowrap flex items-center gap-8 px-6"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={mediumMotion}
             >
-                <div className="h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mb-12" />
+                {brandLogos.map((logo, i) => (
+                    <motion.img
+                        key={i}
+                        src={`/logos/${logo}.svg`}
+                        alt={logo}
+                        className="h-16 object-contain inline-block"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    />
+                ))}
+            </motion.section>
+
+            {/* What We Stand For */}
+            <motion.section
+                id="values"
+                className="py-24 text-center max-w-3xl mx-auto px-6"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={mediumMotion}
+            >
+                {[
+                    "Human-centric AI, responsible innovation,",
+                    "transformative systems that prioritize people over technology.",
+                ].map((line, i) => (
+                    <motion.p
+                        key={i}
+                        className="text-lg md:text-xl text-neutral-400"
+                        variants={smallMotion}
+                        transition={{ delay: i * 0.2 }}
+                    >
+                        {line}
+                    </motion.p>
+                ))}
+            </motion.section>
+
+            {/* Philosophy */}
+            <motion.section
+                id="philosophy"
+                className="py-24 max-w-5xl mx-auto px-6"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={mediumMotion}
+            >
                 <Philosophy />
             </motion.section>
 
-            {/* Services Section */}
+            {/* Services */}
             <motion.section
                 id="services"
-                className="py-24"
+                className="py-24 max-w-5xl mx-auto px-6"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={mediumMotion}
             >
-                <div className="h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mb-12" />
                 <Services />
             </motion.section>
 
-            {/* Capabilities Section */}
+            {/* Capabilities */}
             <motion.section
                 id="capabilities"
-                className="py-24"
+                className="py-24 max-w-5xl mx-auto px-6"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={mediumMotion}
             >
-                <div className="h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mb-12" />
                 <Capabilities />
             </motion.section>
 
-            {/* Process Section */}
+            {/* Process */}
             <motion.section
                 id="process"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                variants={mediumMotion}
+                variants={largeMotion}
             >
                 <Process />
             </motion.section>
 
-            {/* Lab Section */}
+            {/* Lab */}
             <motion.section
                 id="lab"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                variants={mediumMotion}
+                variants={largeMotion}
             >
                 <Lab />
             </motion.section>
 
-            {/* CTA Section */}
+            {/* CTA */}
             <motion.section
                 id="cta"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                variants={mediumMotion}
+                variants={largeMotion}
             >
                 <CTA />
             </motion.section>
