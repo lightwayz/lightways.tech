@@ -1,6 +1,6 @@
 "use client";
 
-import useSmoothScroll from "@/lib/smoothScroll";
+import useSmoothScroll from "@/lib/SmoothScroll";
 import React from "react";
 
 export default function SmoothScroll({
