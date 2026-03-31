@@ -14,7 +14,7 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
 
                 {/* Logo */}
-                <Link href="/">
+                <Link href="/lightways.tech/public">
                     <h1 className="text-xl font-semibold tracking-wide cursor-pointer hover:text-yellow-400 transition">
                         Lightways.tech
                     </h1>

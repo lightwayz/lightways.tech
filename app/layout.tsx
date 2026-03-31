@@ -1,9 +1,9 @@
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import SmoothScroll from "@/components/SmoothScroll";
-import Cursor from "@/components/Cursor";
-import CustomCursor from "@/components/CustomCursor";
+import Navbar from "@/app/components/Navbar";
+import Footer from "@/app/components/Footer";
+import SmoothScroll from "@/app/components/SmoothScroll";
+import Cursor from "@/app/components/Cursor";
+import CustomCursor from "@/app/components/CustomCursor";
 
 import * as React from "react";
 import { Inter } from "next/font/google";
