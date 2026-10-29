@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="600" viewBox="0 0 1100 600" fill="none">
+  <defs>
+    <linearGradient id="hs-background" x1="0" y1="0" x2="1100" y2="600" gradientUnits="userSpaceOnUse"><stop stop-color="#161a15"/><stop offset=".55" stop-color="#0b0d0b"/><stop offset="1" stop-color="#131710"/></linearGradient>
+    <radialGradient id="hs-light" cx="0" cy="0" r="1" gradientTransform="translate(270 320) rotate(20) scale(430 260)" gradientUnits="userSpaceOnUse"><stop stop-color="#ffd700" stop-opacity=".09"/><stop offset="1" stop-color="#ffd700" stop-opacity="0"/></radialGradient>
+    <linearGradient id="hs-base" x1="480" y1="145" x2="590" y2="540" gradientUnits="userSpaceOnUse"><stop stop-color="#2c3329"/><stop offset=".5" stop-color="#181d17"/><stop offset="1" stop-color="#10140f"/></linearGradient>
+    <linearGradient id="hs-side" x1="550" y1="330" x2="570" y2="560" gradientUnits="userSpaceOnUse"><stop stop-color="#262c22"/><stop offset="1" stop-color="#090c08"/></linearGradient>
+    <linearGradient id="hs-glass" x1="-56" y1="-140" x2="60" y2="90" gradientUnits="userSpaceOnUse"><stop stop-color="#e5f0d7" stop-opacity=".26"/><stop offset=".5" stop-color="#e5f0d7" stop-opacity=".06"/><stop offset="1" stop-color="#ffd700" stop-opacity=".13"/></linearGradient>
+    <linearGradient id="hs-edge" x1="-55" y1="-140" x2="50" y2="80" gradientUnits="userSpaceOnUse"><stop stop-color="#e4edda" stop-opacity=".7"/><stop offset=".5" stop-color="#c4cfb6" stop-opacity=".15"/><stop offset="1" stop-color="#ffd700" stop-opacity=".65"/></linearGradient>
+    <linearGradient id="hs-trace" x1="250" y1="310" x2="940" y2="350" gradientUnits="userSpaceOnUse"><stop stop-color="#ffd700"/><stop offset=".6" stop-color="#ffe96a"/><stop offset="1" stop-color="#b8a03b"/></linearGradient>
+    <filter id="hs-glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="5"/></filter>
+    <pattern id="hs-grid" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="matrix(1 .4 -1 .4 550 100)"><path d="M40 0H0V40" stroke="#bbc9ab" stroke-opacity=".06" stroke-width="1"/></pattern>
+    <g id="hs-panel">
+      <path d="M-56-112 52-154 61-149-47-107Z" fill="#d7e1ca" fill-opacity=".2"/>
+      <path d="M52-154 61-149 61 47 52 42Z" fill="#e1ead5" fill-opacity=".14"/>
+      <path d="M-56-112 52-154V42L-56 84Z" fill="url(#hs-glass)" stroke="url(#hs-edge)" stroke-width="1.3"/>
+      <path d="M-48-103 44-139V35L-48 71Z" stroke="#d8e4c9" stroke-opacity=".08"/>
+      <path d="M-56 84 52 42 61 47-47 89Z" fill="#ffd700" fill-opacity=".16"/>
+      <ellipse cx="0" cy="-35" rx="24" ry="31" transform="rotate(20 0 -35)" fill="#0b100c" fill-opacity=".56" stroke="#dce9c9" stroke-opacity=".32"/>
+      <path d="M-15-28 0-36 15-31" stroke="#ffd700" stroke-width="2"/>
+      <circle cx="0" cy="-35" r="4" fill="#ffd700"/>
+      <path d="M-56-112V84" stroke="#eef3e5" stroke-opacity=".5"/>
+      <path d="M-41 98 58 59" stroke="#ffd700" stroke-opacity=".4"/>
+    </g>
+  </defs>
+  <path fill="url(#hs-background)" d="M0 0H1100V600H0Z"/>
+  <path fill="url(#hs-grid)" d="M0 0H1100V600H0Z"/>
+  <path fill="url(#hs-light)" d="M0 0H1100V600H0Z"/>
+  <ellipse cx="579" cy="456" rx="392" ry="82" fill="#000" fill-opacity=".3"/>
+  <path d="M108 354 562 169 1026 355 572 547Z" fill="url(#hs-base)" stroke="#65715b" stroke-opacity=".3"/>
+  <path d="M108 354 572 547 1026 355V371L572 565 108 370Z" fill="url(#hs-side)" stroke="#30382a" stroke-width="1"/>
+  <path d="M572 547V565" stroke="#69735d" stroke-opacity=".3"/>
+  <path d="M147 354 563 187 985 355 572 527Z" stroke="#929d7d" stroke-opacity=".1"/>
+  <g stroke="#a6b18d" stroke-opacity=".13" stroke-width=".8">
+    <path d="M186 320 650 508M258 292 721 478M331 263 794 449M405 234 866 419M477 205 938 390"/>
+    <path d="M183 387 639 201M258 418 714 231M334 449 789 261M411 481 864 291M487 511 939 321"/>
+  </g>
+  <g stroke="#ffd700" stroke-width="1.2" stroke-opacity=".28">
+    <path d="M104 263C168 212 366 370 246 349S160 272 270 321"/>
+    <path d="M98 294C235 420 350 206 268 269S216 399 270 321"/>
+    <path d="M117 348C243 201 358 374 287 377S182 295 270 321"/>
+    <path d="M143 401C342 421 169 206 224 279S326 294 270 321"/>
+    <path d="M202 230C146 372 348 414 299 314S193 290 270 321"/>
+    <path d="M125 323C253 342 177 385 237 387S334 302 270 321"/>
+  </g>
+  <ellipse cx="270" cy="321" rx="47" ry="19" stroke="#ffd700" stroke-opacity=".18"/>
+  <ellipse cx="270" cy="321" rx="27" ry="11" stroke="#ffd700" stroke-opacity=".4"/>
+  <path d="M270 321C335 286 376 287 447 304L643 322 837 340 939 350" stroke="#ffd700" stroke-opacity=".15" stroke-width="11"/>
+  <path d="M270 321C335 286 376 287 447 304L643 322 837 340 939 350" stroke="url(#hs-trace)" stroke-width="2.5"/>
+  <use href="#hs-panel" transform="translate(447 339)"/>
+  <use href="#hs-panel" transform="translate(643 357)"/>
+  <use href="#hs-panel" transform="translate(837 375)"/>
+  <circle cx="270" cy="321" r="14" fill="#ffd700" filter="url(#hs-glow)" opacity=".5"/>
+  <circle cx="270" cy="321" r="7" fill="#ffd700"/>
+  <circle cx="268" cy="319" r="2" fill="#fff5b0"/>
+  <circle cx="939" cy="350" r="4" fill="#ffd700"/>
+  <g stroke="#a6b18d" stroke-opacity=".3"><path d="M447 456V479M643 474V497M837 492V515M270 351V416"/></g>
+  <g fill="#d2dac5" font-family="Arial,Helvetica,sans-serif" font-size="14" letter-spacing="1.5"><text x="204" y="443">A PERSON’S NEED</text><text x="379" y="510">01 / Understand</text><text x="596" y="528">02 / Build</text><text x="777" y="546">03 / Improve</text></g>
+  <path d="M40 48H72M40 48V80M1060 48H1028M1060 48V80M40 552H72M40 552V520M1060 552H1028M1060 552V520" stroke="#8b987a" stroke-opacity=".3"/>
+</svg>

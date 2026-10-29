@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function AnimatedText({ text }: any) {
+export default function AnimatedText({ text }: { text: string }) {
     return (
         <div className="overflow-hidden">
             {text.split(" ").map((word: string, i: number) => (
