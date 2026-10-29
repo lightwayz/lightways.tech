@@ -67,13 +67,6 @@ export default function Services() {
         <div className="service-list">
           {services.map((service) => (
             <article className="service-row" id={`expertise-${service.number}`} tabIndex={-1} key={service.number}>
-            Our areas of focus bring people, products and systems together.
-            Every conversation starts with what needs to improve.
-          </p>
-        </div>
-        <div className="service-list">
-          {services.map((service) => (
-            <article className="service-row" key={service.number}>
               <span className="service-number">{service.number}</span>
               <div>
                 <h3>{service.title}</h3>
