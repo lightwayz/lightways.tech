@@ -1,13 +1,27 @@
+import Arrow from "./Arrow";
 export default function CTA() {
-    return (
-        <section className="py-40 text-center">
-            <h2 className="text-6xl font-bold">
-                Let's Build Something Intelligent
-            </h2>
-
-            <button className="mt-8 bg-yellow-400 text-black px-8 py-4 rounded-full">
-                Start Project
-            </button>
-        </section>
-    );
+  return (
+    <section id="contact" className="contact-section">
+      <div className="container">
+        <p className="eyebrow">LET’S START WITH A CONVERSATION</p>
+        <div className="contact-grid">
+          <h2>
+            What could we
+            <br />
+            make <span>possible?</span>
+          </h2>
+          <div>
+            <p>
+              A problem to explore. An idea to challenge. A new possibility to
+              discuss. We’d like to hear from you.
+            </p>
+            <a className="contact-email" href="mailto:admin@lightways.tech">
+              admin@lightways.tech <Arrow />
+            </a>
+            <span className="contact-note">Opens your email app.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

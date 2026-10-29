@@ -1,32 +1,35 @@
-"use client";
-
-import { motion } from "framer-motion";
-
-const capabilities = [
-    "AI Engineering",
-    "Platform Architecture",
-    "Failure-First Engineering",
-    "Human-Centric Systems",
-    "Cybersecurity AI",
-    "Automation Systems"
+const principles = [
+  [
+    "People before complexity",
+    "Start with the people using the system, including those who are too often left out.",
+  ],
+  [
+    "Clarity before scale",
+    "Make the purpose, assumptions and tradeoffs understandable before expanding the solution.",
+  ],
+  [
+    "Trust by design",
+    "Treat privacy, security and reliability as design responsibilities from the beginning.",
+  ],
 ];
-
 export default function Capabilities() {
-    return (
-        <section className="py-32 px-6 max-w-7xl mx-auto">
-            <h2 className="text-4xl mb-12">Capabilities</h2>
-
-            <div className="grid md:grid-cols-2 gap-6">
-                {capabilities.map((item, i) => (
-                    <motion.div
-                        key={i}
-                        whileHover={{ rotateX: 3, rotateY: 3 }}
-                        className="border border-neutral-800 p-8 rounded-2xl"
-                    >
-                        {item}
-                    </motion.div>
-                ))}
-            </div>
-        </section>
-    );
+  return (
+    <section id="capabilities" className="section principles">
+      <div className="container">
+        <div className="section-topline">
+          <p className="eyebrow">03 / WHAT GUIDES US</p>
+          <span className="micro-label">AMBITION, WITH INTENTION</span>
+        </div>
+        <div className="principles-grid">
+          {principles.map(([title, body], index) => (
+            <article key={title}>
+              <span className="principle-index">0{index + 1}</span>
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

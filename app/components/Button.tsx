@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function Button({ children }: any) {
+export default function Button({ children }: { children: React.ReactNode }) {
     return (
         <motion.button
             whileHover={{ scale: 1.05 }}

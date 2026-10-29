@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
-export default function Parallax({ children }: any) {
+export default function Parallax({ children }: { children: React.ReactNode }) {
     const { scrollY } = useScroll();
 
     const y = useTransform(scrollY, [0, 500], [0, 100]);
