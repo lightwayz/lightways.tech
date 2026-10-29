@@ -26,6 +26,7 @@ export default function Privacy() {
         <section>
           <h2>Visiting this website</h2>
           <p>
+            This version of the website has no accounts,
             This version of the website has no accounts, contact forms,
             advertising tools or site-added analytics. Hosting providers may
             process technical information such as IP addresses, request times
@@ -36,6 +37,7 @@ export default function Privacy() {
         </section>
         <section>
           <h2>Contacting us</h2>
+          <p>The enquiry composer prepares a draft in your browser. It does not send or store your details. Opening the draft passes its content to your email app; copying uses your device clipboard. You choose whether to send the email.</p>
           <p>
             Email links open your own email application. If you contact us, your
             email provider and our email provider process the message. Please
@@ -43,6 +45,7 @@ export default function Privacy() {
             passwords or other sensitive information.
           </p>
         </section>
+        <section><h2>Your preferences</h2><p>If you save a motion preference, this site stores only that choice in your browser’s local storage. No enquiry details are saved there. Your device’s reduced-motion preference is always respected.</p></section>
         <section>
           <h2>Links to other services</h2>
           <p>

@@ -1,3 +1,4 @@
+import HumanSignal from "./experience/HumanSignal";
 export default function Philosophy() {
   return (
     <section id="philosophy" className="section philosophy">

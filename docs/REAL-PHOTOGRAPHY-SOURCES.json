@@ -1,0 +1,49 @@
+{
+  "reviewed": "2026-10-29",
+  "license": "https://www.pexels.com/license/",
+  "usage": "One illustrative stock photograph retained in Philosophy. Subjects are not presented as Lightways staff, clients or endorsers. Other human photographs removed at owner request.",
+  "images": [
+    {
+      "id": "3860813",
+      "slug": "human-progress",
+      "creator": "Andrea Piacquadio",
+      "page": "https://www.pexels.com/photo/cheerful-diverse-colleagues-working-on-laptop-in-office-3860813/",
+      "sourceAsset": "https://images.pexels.com/photos/3860813/pexels-photo-3860813.jpeg?auto=compress&w=1260&h=750&dpr=2",
+      "asset": "public/images/story/human-progress-photo.webp"
+    }
+  ],
+  "retiredImages": [
+    {
+      "id": "7869125",
+      "slug": "purposeful-tools",
+      "creator": "Pavel Danilyuk",
+      "page": "https://www.pexels.com/photo/hands-of-persons-typing-on-a-laptop-on-a-wooden-table-7869125/",
+      "sourceAsset": "https://images.pexels.com/photos/7869125/pexels-photo-7869125.jpeg?auto=compress&w=1260&h=750&dpr=2",
+      "asset": "public/images/story/purposeful-tools-photo.webp"
+    },
+    {
+      "id": "7652179",
+      "slug": "think-build-evolve",
+      "creator": "Thirdman",
+      "page": "https://www.pexels.com/photo/overhead-shot-of-a-group-of-people-having-a-meeting-7652179/",
+      "sourceAsset": "https://images.pexels.com/photos/7652179/pexels-photo-7652179.jpeg?auto=compress&w=1260&h=750&dpr=2",
+      "asset": "public/images/story/think-build-evolve-photo.webp"
+    },
+    {
+      "id": "6927559",
+      "slug": "room-for-life",
+      "creator": "Polina Tankilevitch",
+      "page": "https://www.pexels.com/photo/a-person-holding-a-smartphone-6927559/",
+      "sourceAsset": "https://images.pexels.com/photos/6927559/pexels-photo-6927559.jpeg?auto=compress&w=1260&h=750&dpr=2",
+      "asset": "public/images/story/room-for-life-photo.webp"
+    },
+    {
+      "id": "4226140",
+      "slug": "start-a-conversation",
+      "creator": "Anna Shvets",
+      "page": "https://www.pexels.com/photo/people-on-a-video-call-4226140/",
+      "sourceAsset": "https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&w=1260&h=750&dpr=2",
+      "asset": "public/images/story/start-a-conversation-photo.webp"
+    }
+  ]
+}

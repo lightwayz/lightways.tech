@@ -5,6 +5,7 @@ const tracked = execFileSync("git", ["ls-files"], { encoding: "utf8" })
   .trim()
   .split(/\r?\n/);
 const files = new Set(tracked.map((file) => file.split(path.sep).join("/")));
+for (const dir of ["app", "public", "scripts", "docs", "lib"]) {
 for (const dir of ["app", "public", "scripts", "docs"]) {
   for (const entry of fs.readdirSync(dir, { recursive: true })) {
     const file = path.join(dir, entry);

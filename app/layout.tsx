@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ExperiencePanels from "./components/experience/ExperiencePanels";
+import SiteEnhancements from "./components/experience/SiteEnhancements";
 import "./globals.css";
 const description =
   "Human-centric AI, thoughtful engineering and technology for human progress. Meet Lightways.Tech and explore PADI, our planned personal assistant.";
@@ -48,6 +50,8 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <ExperiencePanels />
+        <SiteEnhancements />
       </body>
     </html>
   );

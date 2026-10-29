@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Brand from "./Brand";
 import Arrow from "./Arrow";
+import ExperienceAction from "./experience/ExperienceAction";
 export default function Footer() {
   return (
     <footer className="site-footer">
@@ -33,6 +34,7 @@ export default function Footer() {
           <span>© {new Date().getFullYear()} Lightways.Tech</span>
           <span>Human first. Forward always.</span>
           <Link href="/privacy">Privacy</Link>
+          <ExperienceAction panel="preferences">Experience preferences</ExperienceAction>
         </div>
       </div>
     </footer>

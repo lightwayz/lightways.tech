@@ -1,3 +1,4 @@
+import StoryImage from "./StoryImage";
 const principles = [
   [
     "People before complexity",
@@ -29,6 +30,12 @@ export default function Capabilities() {
             </article>
           ))}
         </div>
+        <div className="inclusive-service">
+          <h3>Respect is part of the service.</h3>
+          <p>People deserve the same care and professional respect, regardless of race, nationality or where they live. We design around real circumstances: the devices people use, the connections they rely on and the ways they access information.</p>
+          <p>That commitment means plain language, accessible experiences, clear pricing and responsible handling of information. At the start of an engagement, we confirm the language, time-zone arrangements, payment options and support availability we can provide. You should know what to expect before you commit.</p>
+        </div>
+        <StoryImage name="clarity-and-trust" />
       </div>
     </section>
   );
