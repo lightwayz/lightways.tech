@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function Section({ children }: any) {
+export default function Section({ children }: { children: React.ReactNode }) {
     return (
         <motion.section
             initial={{ opacity: 0 }}

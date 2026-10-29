@@ -2,7 +2,7 @@
 
 "use client";
 
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 import React, { useRef } from "react";
 
 export default function MagneticButton({

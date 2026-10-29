@@ -1,45 +1,54 @@
+import type { Metadata } from "next";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import "./globals.css";
-import Navbar from "@/app/components/Navbar";
-import Footer from "@/app/components/Footer";
-import SmoothScroll from "@/app/components/SmoothScroll";
-import Cursor from "@/app/components/Cursor";
-import CustomCursor from "@/app/components/CustomCursor";
-import PageIntro from "@/app/components/PageIntro";
-import GrainOverlay from "@/app/components/GrainOverlay";
-import MotionNoise from "@/app/components/MotionNoise";
-import FilmGlow from "@/app/components/FilmGlow";
-import ScrollProgress from "@/app/components/ScrollProgress";
-import SectionIndicator from "@/app/components/SectionIndicator";
-
-import * as React from "react";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
-
+const description =
+  "Human-centric AI, thoughtful engineering and technology for human progress. Meet Lightways.Tech and explore PADI, our planned personal assistant.";
+export const metadata: Metadata = {
+  metadataBase: new URL("https://lightways.tech"),
+  title: {
+    default: "Lightways.Tech — Intelligent Systems for Human Progress",
+    template: "%s | Lightways.Tech",
+  },
+  description,
+  applicationName: "Lightways.Tech",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Lightways.Tech",
+    title: "Intelligent Systems for Human Progress",
+    description,
+    images: [
+      {
+        url: "/social-card.png",
+        width: 1200,
+        height: 630,
+        alt: "Lightways.Tech — Intelligent systems for human progress",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lightways.Tech — Intelligent Systems for Human Progress",
+    description,
+    images: ["/social-card.png"],
+  },
+};
 export default function RootLayout({
-                                       children,
-                                   }: {
-    children: React.ReactNode;
+  children,
+}: {
+  children: React.ReactNode;
 }) {
-    return (
-        <html lang="en">
-        <body className={`${inter.className} bg-black text-white`}>
-        <SmoothScroll>
-            <CustomCursor />
-            <Cursor />
-            <PageIntro />
-            <FilmGlow />
-            <MotionNoise />
-            <GrainOverlay />
-            <ScrollProgress />
-            <SectionIndicator />
-            <Navbar />
-
-            {children}
-
-            <Footer />
-        </SmoothScroll>
-        </body>
-        </html>
-    );
+  return (
+    <html lang="en">
+      <body>
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
+    </html>
+  );
 }

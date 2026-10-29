@@ -7,6 +7,8 @@ export default function CustomCursor() {
     const [hovering, setHovering] = useState(false);
 
     useEffect(() => {
+        if (window.matchMedia("(pointer: coarse), (prefers-reduced-motion: reduce)").matches) return;
+        let frame = 0;
         let mouseX = 0;
         let mouseY = 0;
 
@@ -21,7 +23,7 @@ export default function CustomCursor() {
                 y: prev.y + (mouseY - prev.y) * 0.12,
             }));
 
-            requestAnimationFrame(animate);
+            frame = requestAnimationFrame(animate);
         };
 
         const handleHover = (e: MouseEvent) => {
@@ -45,6 +47,7 @@ export default function CustomCursor() {
         animate();
 
         return () => {
+            cancelAnimationFrame(frame);
             window.removeEventListener("mousemove", move);
             window.removeEventListener("mousemove", handleHover);
         };
@@ -52,7 +55,7 @@ export default function CustomCursor() {
 
     return (
         <div
-            className={`fixed w-6 h-6 rounded-full pointer-events-none z-[9999] mix-blend-difference transition-all duration-200 ${
+            className={`custom-cursor fixed w-6 h-6 rounded-full pointer-events-none z-[9999] mix-blend-difference transition-all duration-200 ${
                 hovering ? "scale-150 bg-yellow-300" : "bg-yellow-400"
             }`}
             style={{

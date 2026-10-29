@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
-export default function MagneticButton({ children }: any) {
+export default function MagneticButton({ children }: { children: React.ReactNode }) {
     const ref = useRef(null);
 
     return (

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function Tilt3D({ children }: any) {
+export default function Tilt3D({ children }: { children: React.ReactNode }) {
     return (
         <motion.div
             whileHover={{

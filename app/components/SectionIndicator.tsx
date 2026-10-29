@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const sections = ["hero", "about", "services", "contact"];
+const sections = ["hero", "philosophy", "services", "padi", "cta"];
 
 export default function SectionIndicator() {
     const [active, setActive] = useState("hero");
@@ -28,7 +28,7 @@ export default function SectionIndicator() {
     }, []);
 
     return (
-        <div className="fixed right-6 top-1/2 -translate-y-1/2 z-[9998] flex flex-col gap-3">
+        <div aria-hidden="true" className="hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 z-[9998] flex flex-col gap-3">
             {sections.map((section) => (
                 <div
                     key={section}

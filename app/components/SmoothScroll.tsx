@@ -2,6 +2,7 @@
 
 import useSmoothScroll from "@/lib/SmoothScroll";
 import React from "react";
+import { MotionConfig } from "framer-motion";
 
 export default function SmoothScroll({
                                          children,
@@ -10,5 +11,5 @@ export default function SmoothScroll({
 }) {
     useSmoothScroll();
 
-    return <>{children}</>;
+    return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
 }
