@@ -1,4 +1,4 @@
-import type { NextConfig } from "next";
+// @ts-check
 const isDevelopment = process.env.NODE_ENV === "development";
 const contentSecurityPolicy = [
   "default-src 'self'",
@@ -12,7 +12,8 @@ const contentSecurityPolicy = [
   "form-action 'self'",
   "object-src 'none'",
 ].join("; ");
-const nextConfig: NextConfig = {
+/** @type {import("next").NextConfig} */
+const nextConfig = {
   poweredByHeader: false,
   async headers() {
     return [

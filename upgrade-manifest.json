@@ -48,12 +48,13 @@
     "app/template.tsx",
     "docs/COMPANY-UPGRADE-REVIEW.md",
     "docs/LOGO-UPDATE.md",
+    "docs/PUBLISHING.md",
     "docs/VERCEL-INCREMENTAL-REVIEW.md",
     "eslint.config.mjs",
     "lib/SmoothScroll.ts",
     "lib/animation.ts",
     "lib/motion.ts",
-    "next.config.ts",
+    "next.config.mjs",
     "package-lock.json",
     "package.json",
     "postcss.config.mjs",
@@ -77,6 +78,7 @@
     "app/app",
     "lib/lib",
     "lib/firebase.ts",
-    "app/favicon.ico"
+    "app/favicon.ico",
+    "next.config.ts"
   ]
 }

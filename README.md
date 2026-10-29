@@ -18,7 +18,7 @@ Open http://localhost:3000. PADI is at /padi and privacy information is at /priv
     npm run check:build
     npm run start
 
-`npm run build` retains the standard Next.js Turbopack build. `build:webpack` is a supported alternative and is the production build verified for this review package.
+Both production build commands use Webpack for compatibility with Hostinger's current Linux build environment. Configuration is in `next.config.mjs`; see `docs/PUBLISHING.md` for the platform details.
 
 ## Apply this package to an existing clone
 

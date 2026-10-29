@@ -13,6 +13,7 @@ for (const dir of ["app", "public", "scripts", "docs"]) {
 }
 for (const file of [
   "README.md",
+  "next.config.mjs",
   "Apply-Local-Update.ps1",
   "upgrade-manifest.json",
 ])
@@ -31,7 +32,7 @@ fs.writeFileSync(
   JSON.stringify(
     {
       files: managed,
-      retire: ["app/app", "lib/lib", "lib/firebase.ts", "app/favicon.ico"],
+      retire: ["app/app", "lib/lib", "lib/firebase.ts", "app/favicon.ico", "next.config.ts"],
     },
     null,
     2,

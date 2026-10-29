@@ -1,5 +1,7 @@
 # Lightways.Tech — Company website upgrade review
 
+Hosting compatibility update: see PUBLISHING.md. Both production build commands now use Webpack and the configuration file is next.config.mjs. Historical build notes below describe the earlier review stages.
+
 Latest logo revision: see LOGO-UPDATE.md for current asset and validation details. The complete production-build pass below predates that revision; its rerun encountered generated-directory permissions.
 
 Prepared 29 October 2026. Local branch: improve/company-polish.
