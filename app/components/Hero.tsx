@@ -1,10 +1,17 @@
 import Arrow from "./Arrow";
-import YellowPath from "./experience/YellowPath";
+improve/existing-vercel-site
+import YellowPath from "./experience/YellowPath"; main
 export default function Hero() {
   return (
     <section id="hero" className="hero">
       <div className="hero-art" aria-hidden="true">
+ improve/existing-vercel-site
         <YellowPath />
+
+        <div className="hero-orbit orbit-a" />
+        <div className="hero-orbit orbit-b" />
+        <div className="hero-orbit orbit-c" />
+        <div className="hero-light" /> main
       </div>
       <div className="container hero-content">
         <p className="eyebrow">
@@ -30,8 +37,8 @@ export default function Hero() {
               </a>
               <a href="#services" className="button button-outline">
                 Explore our expertise <span aria-hidden="true">↓</span>
-              </a>
-              <a href="#clear-path" className="clear-path-invitation">Find your clear path <span aria-hidden="true">↘</span></a>
+              </a>improve/existing-vercel-site
+              <a href="#clear-path" className="clear-path-invitation">Find your clear path <span aria-hidden="true">↘</span></a> main
             </div>
           </div>
           <div className="hero-note">

@@ -1,5 +1,6 @@
 import Arrow from "./Arrow";
 import ExperienceAction from "./experience/ExperienceAction";
+
 export default function CTA() {
   return (
     <section id="contact" className="contact-section">
@@ -20,7 +21,9 @@ export default function CTA() {
               admin@lightways.tech <Arrow />
             </a>
             <span className="contact-note">Opens your email app.</span>
-            <ExperienceAction panel="enquiry">Prepare an enquiry ↗</ExperienceAction>
+            <ExperienceAction panel="enquiry">
+              Prepare an enquiry ↗
+            </ExperienceAction>
           </div>
         </div>
       </div>
