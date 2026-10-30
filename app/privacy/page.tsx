@@ -27,7 +27,6 @@ export default function Privacy() {
           <h2>Visiting this website</h2>
           <p>
             This version of the website has no accounts,
-            This version of the website has no accounts, contact forms,
             advertising tools or site-added analytics. Hosting providers may
             process technical information such as IP addresses, request times
             and browser information to deliver and protect the site. The

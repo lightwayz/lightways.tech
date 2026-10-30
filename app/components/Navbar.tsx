@@ -2,6 +2,7 @@ import Link from "next/link";
 import Brand from "./Brand";
 import Arrow from "./Arrow";
 import MobileMenu from "./MobileMenu";
+import ExpertiseMenu from "./experience/ExpertiseMenu";
 export default function Navbar() {
   return (
     <header className="site-header">
@@ -9,7 +10,7 @@ export default function Navbar() {
         <Brand />
         <nav aria-label="Main navigation" className="desktop-nav">
           <Link href="/#philosophy">About</Link>
-          <Link href="/#services">Expertise</Link>
+          <ExpertiseMenu />
           <Link href="/#lab">The Lab</Link>
           <Link href="/padi">
             PADI <span className="nav-status">Upcoming</span>
