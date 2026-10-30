@@ -1,8 +1,11 @@
 import Arrow from "./Arrow";
 import YellowPath from "./experience/YellowPath";
+import BrandIntroduction from "./experience/BrandIntroduction";
+import "./experience/brand-introduction.css";
 export default function Hero() {
   return (
     <section id="hero" className="hero">
+      <BrandIntroduction />
       <div className="hero-art" aria-hidden="true">
         <YellowPath />
       </div>
@@ -10,8 +13,13 @@ export default function Hero() {
         <p className="eyebrow">
           <span className="signal-dot" /> INDEPENDENT THINKING. HUMAN PROGRESS.
         </p>
+        <div className="hero-opening-message">
+          <p className="hero-opening-statement">Your business is more than its systems. It is <span>people</span> serving customers, making decisions and moving ideas forward.</p>
+          <p>When everyday work becomes harder than it should, technology should help clear the way. Lightways brings human understanding and thoughtful engineering together to simplify work, connect what matters and build useful digital products.</p>
+          <p className="hero-opening-method">Understand the need. Build what helps. Improve together.</p>
+        </div>
         <h1>
-          We Build
+            We Build
           <br />
           <span>Intelligent Systems</span>
           <br />
