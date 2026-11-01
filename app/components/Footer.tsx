@@ -18,6 +18,7 @@ export default function Footer() {
           <nav aria-label="Footer navigation">
             <Link href="/#philosophy">About Lightways</Link>
             <Link href="/#services">Expertise</Link>
+            <Link href="/work">Selected work</Link>
             <Link href="/#lab">The Lab</Link>
             <Link href="/padi">PADI · Upcoming</Link>
           </nav>
@@ -34,7 +35,7 @@ export default function Footer() {
           <span>© {new Date().getFullYear()} Lightways.Tech</span>
           <span>Human first. Forward always.</span>
           <Link href="/privacy">Privacy</Link>
-          <ExperienceAction panel="preferences">Experience preferences</ExperienceAction>
+          <ExperienceAction panel="preferences">Motion & accessibility</ExperienceAction>
         </div>
       </div>
     </footer>

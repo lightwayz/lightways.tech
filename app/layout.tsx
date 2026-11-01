@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ExperiencePanels from "./components/experience/ExperiencePanels";
 import SiteEnhancements from "./components/experience/SiteEnhancements";
+import ChatContact from "./components/experience/ChatContact";
+import FirstOpening from "./components/experience/FirstOpening";
 import "./globals.css";
 const description =
   "Human-centric AI, thoughtful engineering and technology for human progress. Meet Lightways.Tech and explore PADI, our planned personal assistant.";
@@ -44,6 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <FirstOpening />
         <a className="skip-link" href="#main">
           Skip to content
         </a>
@@ -52,6 +55,7 @@ export default function RootLayout({
         <Footer />
         <ExperiencePanels />
         <SiteEnhancements />
+        <ChatContact />
       </body>
     </html>
   );

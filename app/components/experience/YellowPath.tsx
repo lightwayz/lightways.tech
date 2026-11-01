@@ -14,7 +14,7 @@ export default function YellowPath() {
   const artwork = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const node = artwork.current;
-    const hero = node?.closest<HTMLElement>(".hero");
+    const hero = node?.closest<HTMLElement>(".hero-headline-scene") ?? node?.closest<HTMLElement>(".hero");
     if (!node || !hero) return;
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     let frame = 0, reduced = false, visible = true;

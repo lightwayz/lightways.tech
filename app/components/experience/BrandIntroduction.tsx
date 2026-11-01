@@ -1,63 +1,70 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { storedMotion } from "./events";
 
-const sessionKey = "lightways:introduction:v2";
-
 export default function BrandIntroduction() {
-  const dialog = useRef<HTMLDialogElement>(null);
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  function dismiss() {
-    if (timer.current) clearTimeout(timer.current);
-    dialog.current?.close();
-  }
-
-  function revealHomepage() {
-    if (timer.current) clearTimeout(timer.current);
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || storedMotion() === "reduced") return;
-    // Content is always readable; animate only after the opening has finished.
-    document.querySelectorAll<HTMLElement>(".hero-opening-message > p").forEach((line, index) => {
-      if (typeof line.animate === "function") line.animate(
-        [{ opacity: 0.3, transform: "translateY(12px)" }, { opacity: 1, transform: "translateY(0)" }],
-        { duration: 650, delay: index * 160, easing: "cubic-bezier(.2,.65,.3,1)", fill: "backwards" },
-      );
-    });
-  }
+  const story = useRef<HTMLElement>(null);
+  const [environment, setEnvironment] = useState({ inView: false, visible: false, reduced: true });
 
   useEffect(() => {
-    const panel = dialog.current;
+    const panel = story.current;
+    if (!panel) return;
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let seen = false;
-    try { seen = sessionStorage.getItem(sessionKey) === "seen"; } catch { /* Storage is optional. */ }
-    // Never interrupt a deep link, restored scroll position or reduced-motion visit.
-    if (!panel || seen || media.matches || storedMotion() === "reduced" || location.hash || window.scrollY > 0) return;
-    const frame = requestAnimationFrame(() => {
-      // A visitor who has already started using the page should not be interrupted.
-      if (document.activeElement !== document.body || window.scrollY > 0) return;
-      try {
-        panel.showModal();
-        try { sessionStorage.setItem(sessionKey, "seen"); } catch { /* Still dismiss on time. */ }
-        timer.current = setTimeout(() => panel.close(), 8000);
-      } catch { /* Unsupported browsers keep the homepage visible. */ }
-    });
-    const stopForMotion = () => {
-      if (media.matches || storedMotion() === "reduced") dismiss();
+    const updateMotion = () => setEnvironment(previous => ({ ...previous, reduced: media.matches || storedMotion() === "reduced" }));
+    const updateVisibility = () => setEnvironment(previous => ({ ...previous, visible: !document.hidden }));
+    const observer = typeof IntersectionObserver === "undefined" ? null : new IntersectionObserver(entries => {
+      setEnvironment(previous => ({ ...previous, inView: entries.some(entry => entry.isIntersecting) }));
+    }, { threshold: 0 });
+    const updateFallback = () => {
+      const bounds = panel.getBoundingClientRect();
+      setEnvironment(previous => ({ ...previous, inView: bounds.bottom > 0 && bounds.top < window.innerHeight }));
     };
-    media.addEventListener("change", stopForMotion);
-    window.addEventListener("lightways:motion", stopForMotion);
+    observer?.observe(panel);
+    if (!observer) {
+      updateFallback();
+      window.addEventListener("scroll", updateFallback, { passive: true });
+      window.addEventListener("resize", updateFallback);
+    }
+    updateMotion();
+    updateVisibility();
+    media.addEventListener("change", updateMotion);
+    window.addEventListener("lightways:motion", updateMotion);
+    window.addEventListener("storage", updateMotion);
+    document.addEventListener("visibilitychange", updateVisibility);
     return () => {
-      cancelAnimationFrame(frame);
-      if (timer.current) clearTimeout(timer.current);
-      panel.close();
-      media.removeEventListener("change", stopForMotion);
-      window.removeEventListener("lightways:motion", stopForMotion);
+      observer?.disconnect();
+      media.removeEventListener("change", updateMotion);
+      window.removeEventListener("lightways:motion", updateMotion);
+      window.removeEventListener("storage", updateMotion);
+      document.removeEventListener("visibilitychange", updateVisibility);
+      window.removeEventListener("scroll", updateFallback);
+      window.removeEventListener("resize", updateFallback);
     };
   }, []);
 
+  useEffect(() => {
+    if (environment.reduced || typeof IntersectionObserver === "undefined") return;
+    const copy = document.querySelector(".hero-opening-message");
+    if (!copy) return;
+    const animations: Animation[] = [];
+    const observer = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      observer.disconnect();
+      copy.querySelectorAll<HTMLElement>(":scope > p").forEach((line, index) => {
+        if (typeof line.animate === "function") animations.push(line.animate(
+          [{ opacity: .3, transform: "translateY(12px)" }, { opacity: 1, transform: "translateY(0)" }],
+          { duration: 650, delay: index * 160, easing: "cubic-bezier(.2,.65,.3,1)", fill: "backwards" },
+        ));
+      });
+    }, { threshold: .15 });
+    observer.observe(copy);
+    return () => { observer.disconnect(); animations.forEach(animation => animation.cancel()); };
+  }, [environment.reduced]);
+
+  const running = environment.inView && environment.visible && !environment.reduced;
   return (
-    <dialog ref={dialog} className="brand-introduction" aria-labelledby="brand-introduction-title" aria-describedby="brand-introduction-description" onClose={revealHomepage}>
+    <section ref={story} className="brand-introduction" data-motion={environment.reduced ? "reduced" : "auto"} data-playback={running ? "running" : "paused"} aria-labelledby="brand-introduction-title" aria-describedby="brand-introduction-description">
       <div className="brand-introduction-inner">
         <p className="eyebrow">LIGHTWAYS / TECHNOLOGY WITH PURPOSE</p>
         <h2 id="brand-introduction-title" className="brand-introduction-accessible">Lightways. Intelligent systems. Human progress.</h2>
@@ -81,8 +88,7 @@ export default function BrandIntroduction() {
           <div className="brand-introduction-scene scene-lightways"><img src="/icon.svg" width="80" height="80" alt="" /><p>Lightways.<br /><span>Intelligent systems.</span><br />Human progress.</p></div>
         </div>
         <div className="brand-introduction-timeline" aria-hidden="true"><span /><span /><span /><span /></div>
-        <button type="button" className="brand-introduction-skip" autoFocus onClick={dismiss}>Skip introduction <span aria-hidden="true">↗</span></button>
       </div>
-    </dialog>
+    </section>
   );
 }

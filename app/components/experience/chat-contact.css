@@ -1,0 +1,17 @@
+.chat-contact { position:fixed; right:max(20px,env(safe-area-inset-right)); bottom:calc(20px + env(safe-area-inset-bottom)); z-index:45; }
+.chat-contact-trigger { display:flex; align-items:center; justify-content:center; gap:12px; min-height:54px; padding:14px 22px; color:var(--background); background:var(--yellow); border:1px solid var(--yellow); border-radius:100px; box-shadow:0 8px 30px #0005; cursor:pointer; list-style:none; font-size:.85rem; font-weight:600; }
+.chat-contact-trigger::-webkit-details-marker { display:none; }
+.chat-contact-panel { position:absolute; right:0; bottom:calc(100% + 12px); width:min(380px,calc(100vw - 40px)); max-height:calc(100svh - 120px - env(safe-area-inset-bottom)); overflow:auto; overscroll-behavior:contain; padding:24px; border:1px solid var(--line); border-top:3px solid var(--yellow); border-radius:12px; background:var(--background); color:var(--foreground); box-shadow:0 20px 70px #0008; }
+.chat-contact-panel header { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.chat-contact-panel header button { min-height:44px; min-width:44px; border:1px solid var(--line); color:var(--foreground); background:transparent; border-radius:50%; font:inherit; font-size:1.5rem; cursor:pointer; }
+.chat-contact-panel h2 { font-size:clamp(1.65rem,5vw,2.1rem); line-height:1.2; margin:20px 0 16px; }
+.chat-contact-panel > p { font-size:.85rem; color:var(--muted); }
+.chat-contact-topics { display:grid; gap:10px; margin:24px 0; }
+.chat-contact-topics button,.chat-contact-primary { display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:48px; padding:14px 16px; border:1px solid var(--line); color:var(--foreground); background:transparent; font:inherit; font-size:.8rem; text-align:left; cursor:pointer; }
+.chat-contact-topics button:hover { border-color:var(--yellow); }
+.chat-contact-topics button > span { color:var(--yellow); }
+.chat-contact-panel .chat-contact-primary { color:var(--background); background:var(--yellow); border-color:var(--yellow); }
+.chat-contact-email { display:inline-flex; align-items:center; gap:24px; min-height:44px; font-size:.8rem; text-decoration:underline; text-underline-offset:4px; margin-top:8px; }
+.chat-contact-panel > .chat-contact-note { font-size:.7rem; line-height:1.7; margin-top:16px; }
+.back-to-top { bottom:calc(90px + env(safe-area-inset-bottom)); }
+@media print { .chat-contact { display:none; } }

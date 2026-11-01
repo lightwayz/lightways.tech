@@ -44,14 +44,17 @@ export default function Privacy() {
             passwords or other sensitive information.
           </p>
         </section>
-        <section><h2>Your preferences</h2><p>If you save a motion preference, this site stores only that choice in your browser’s local storage. No enquiry details are saved there. Your device’s reduced-motion preference is always respected.</p></section>
+        <section><h2>Your preferences</h2><p>If you save a motion preference, this site stores that choice in your browser’s local storage. The welcome animation also uses a session-storage flag so it runs once in a browser-tab session. Neither value contains your enquiry details. Your device’s reduced-motion preference is always respected. You can remove these preferences through your browser’s site-data controls.</p></section>
         <section>
           <h2>Links to other services</h2>
           <p>
-            Links to GitHub take you to another service, whose own privacy
-            practices apply. This site does not load GitHub tracking or embedded
-            content.
+            Links to GitHub and the project websites take you to other services,
+            whose own privacy practices apply. Project links open public websites;
+            Lightways does not request access to their private customer records.
           </p>
+          <p>The WhatsApp button opens WhatsApp with a draft addressed to our business number. WhatsApp processes information according to its own terms when you use that service. No message is sent until you choose to send it there.</p>
+          <p>Choosing a translated language opens Google Translate in a new tab with the published page URL and the selected language. Google processes that request under its own policies. The language links do not include enquiry drafts, local development addresses or page query parameters. Translation is automatic; English is the original version.</p>
+          <p>This website does not load embedded WhatsApp, Google Translate or GitHub tracking scripts. Those external services are opened only when you choose their links.</p>
         </section>
         <section>
           <h2>Questions</h2>

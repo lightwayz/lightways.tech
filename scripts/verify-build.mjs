@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
-const routes = ["", "/padi", "/privacy"];
+const routes = ["", "/padi", "/privacy", "/work", "/work/energywallet-ticket-centre", "/work/unic-law-firm"];
 const documents = new Map(
   routes.map((route) => [
     route,
@@ -98,6 +98,22 @@ assert.ok(
   ),
 );
 assert.ok(!fs.existsSync("app/app") && !fs.existsSync("lib/lib"));
+assert.match(documents.get(""), /id="work"/, "Homepage must expose selected work");
+assert.match(documents.get("/work"), /EnergyWallet Ticket Centre/);
+assert.match(documents.get("/work"), /UNIC Law Firm/);
+const energyEvidence = documents.get("/work/energywallet-ticket-centre");
+assert.match(energyEvidence, /7,400\+/);
+assert.match(energyEvidence, /15,000\+/);
+assert.match(energyEvidence, /supplied by Lightways on 31 October 2026/);
+assert.ok(!energyEvidence.includes("5,000,000"), "Do not publish the superseded ambiguous ticket figure");
+assert.match(energyEvidence, /https:\/\/tickets\.energywalletng\.com\//);
+assert.match(documents.get("/work/unic-law-firm"), /https:\/\/www\.uniclawfirm\.com\//);
+assert.match(documents.get("/privacy"), /WhatsApp/);
+assert.match(documents.get("/privacy"), /Google Translate/);
+assert.match(documents.get("/privacy"), /session-storage/);
+assert.match(fs.readFileSync("app/layout.tsx", "utf8"), /<FirstOpening\s*\/>/, "Welcome component must be mounted");
+assert.match(fs.readFileSync("app/components/experience/FirstOpening.tsx", "utf8"), /setTimeout\(close, 4000\)/);
+console.log("PASS named project evidence, reported usage, public links, welcome integration and privacy disclosures");
 console.log(
   "PASS PADI status, sitemap, social image, reduced-motion CSS, security configuration and clean folder structure",
 );

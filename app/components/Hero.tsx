@@ -1,15 +1,14 @@
 import Arrow from "./Arrow";
 import YellowPath from "./experience/YellowPath";
 import BrandIntroduction from "./experience/BrandIntroduction";
+import ReadingGlass from "./experience/ReadingGlass";
 import "./experience/brand-introduction.css";
 export default function Hero() {
   return (
     <section id="hero" className="hero">
       <BrandIntroduction />
-      <div className="hero-art" aria-hidden="true">
-        <YellowPath />
-      </div>
       <div className="container hero-content">
+        <ReadingGlass>
         <p className="eyebrow">
           <span className="signal-dot" /> INDEPENDENT THINKING. HUMAN PROGRESS.
         </p>
@@ -17,6 +16,11 @@ export default function Hero() {
           <p className="hero-opening-statement">Your business is more than its systems. It is <span>people</span> serving customers, making decisions and moving ideas forward.</p>
           <p>When everyday work becomes harder than it should, technology should help clear the way. Lightways brings human understanding and thoughtful engineering together to simplify work, connect what matters and build useful digital products.</p>
           <p className="hero-opening-method">Understand the need. Build what helps. Improve together.</p>
+        </div>
+        </ReadingGlass>
+        <div className="hero-headline-scene">
+        <div className="hero-art" aria-hidden="true">
+          <YellowPath />
         </div>
         <h1>
             We Build
@@ -32,6 +36,7 @@ export default function Hero() {
               <br className="desktop-break" /> Technology with people at its
               heart.
             </p>
+            <p className="hero-proof-link"><a href="/work">Explore our production projects <span aria-hidden="true">↗</span></a></p>
             <div className="button-group">
               <a href="#contact" className="button button-primary">
                 Start a conversation <Arrow />
@@ -56,6 +61,7 @@ export default function Hero() {
           <a href="#philosophy">
             SCROLL TO DISCOVER <span aria-hidden="true">↓</span>
           </a>
+        </div>
         </div>
       </div>
     </section>

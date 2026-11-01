@@ -1,41 +1,53 @@
-# Lightways: eight-second opening story + expanded introduction
+# Lightways.Tech
 
-This focused update supersedes the earlier introduction ZIPs. It does not change your existing main headline, its description, buttons, PADI status, other sections, dependencies, package files, configuration or globals.css. It is not a complete repository.
+Company website for Lightways.Tech: human-centric technology, end-to-end product delivery and the planned PADI personal-assistant product.
 
-OPENING STORY
-0–2 seconds: a yellow point appears. “Behind every business challenge is a human need.”
-2–4 seconds: fine paths form around it. “Work becomes complicated. Progress shouldn’t have to.”
-4–6 seconds: paths compress into a clear connection. “We understand the need. Build what helps. Improve together.”
-6–8 seconds: your existing LW icon resolves alongside “Lightways. Intelligent systems. Human progress.”
+## Run locally
 
-The sequence is an original SVG/CSS treatment. No video, WebGL, new libraries, audio, false loading percentage or network request. Skip remains fixed on screen. Escape uses native dialog dismissal. It closes automatically after eight seconds and appears once per tab session when sessionStorage is available. A new versioned session key ensures visitors can see this revised story.
+Use the existing Git checkout. In PowerShell:
 
-System or saved reduced motion skips the automatic opening. Deep links, restored scroll, and visitors already focused on another control also skip it. With JavaScript unavailable the dialog stays closed and the complete homepage remains readable. Screen readers receive a stable title and complete story description instead of repeated changing announcements.
-
-HOMEPAGE INTRODUCTION
-The full requested three-paragraph introduction appears BEFORE the existing “We Build / Intelligent Systems / For Human Progress.” heading. Following dismissal, those paragraphs reveal with a short stagger. They are always present and readable without JavaScript, and remain static for reduced-motion visitors. The rest of your original hero remains.
-
-INSTALL LOCALLY
-1. Extract this ZIP outside your project. Do not replace your repository with this folder.
-2. In your existing project, run git status --short and preserve any work before overwriting files. Back up app/components/Hero.tsx and any earlier introduction files outside the repo.
-3. Copy only these three files into their matching paths under C:\Users\HP\WebstormProjects\lightways.tech:
-   app/components/Hero.tsx
-   app/components/experience/BrandIntroduction.tsx
-   app/components/experience/brand-introduction.css
-4. Run the following commands separately, stopping if any fails:
-
+```powershell
+npm.cmd ci
 npm.cmd run build
 npm.cmd run check:build
 npm.cmd run dev
+```
 
-5. Open http://localhost:3000/ in a fresh tab. The production introduction plays once per session. The standalone preview has a Replay button for reviewing the sequence; the production website does not add this button.
-6. Check Skip, Escape, keyboard focus, all four messages, completion after eight seconds, repeat visits, mobile portrait/landscape, browser zoom and reduced motion. Confirm existing sections and PADI upcoming disclosure remain intact.
-7. Review locally before publishing. No GitHub update or deployment has been performed by this package.
+Open http://localhost:3000/. Stop at any failing command before publishing. Use a Node.js release supported by the locked Next.js dependency. Dependencies and lockfile are unchanged in the evidence-led update.
 
-VALIDATION
-- Production compilation and TypeScript passed for this revision.
-- Standalone TypeScript check and CSS parsing passed.
-- Tests of actual transpiled component lifecycle/handlers with mocked browser APIs passed: 8000ms timeout, Skip clears timeout, session marking, reduced motion (system/saved), repeat session, deep link, restored scroll and active focus protection.
-- Original headline/description/CTA/PADI wording retained; new copy precedes the original H1.
-- Full production export remains blocked in this environment by a Windows EPERM creating .next/server/app/_global-error.segments/_global-error. There was no code/type error before that failure. Run the complete build and check:build locally before publishing.
-- Actual browser/mobile visual and native dialog focus testing has not been completed here. The standalone HTML renders the actual Hero markup/styles with a small preview-only animation driver; it is a review aid, not a substitute for local Next.js QA.
+## Pages
+
+- `/` — company, selected work, services, approach, PADI preview and contact.
+- `/work` — project index.
+- `/work/energywallet-ticket-centre` — production ticketing project.
+- `/work/unic-law-firm` — professional-services project.
+- `/padi` — planned product; development has not started.
+- `/privacy` — website data handling and external-service links.
+
+## Project evidence
+
+Project content lives in `lib/projects.ts`. Lightways' owner confirmed end-to-end builds and production deployment for EnergyWallet Ticket Centre and UNIC Law Firm. EnergyWallet figures supplied on 31 October 2026 are 7,400+ transactions and 15,000+ tickets handled across issuance, sales and receipt. The public pages retain a compact source/date note. No client quotations, revenue, unique-customer figures, uptime guarantees or independent security certifications are invented.
+
+UNIC's public interface was reviewed; the EnergyWallet role, usage and security-hardening information comes from the owner. The cover panels are editorial project identities, not interface screenshots. Source notes and verification limits are in `docs/EVIDENCE-LAUNCH-REVIEW.md`.
+
+## Experience and accessibility
+
+The four-second first-visit welcome is mounted in the root layout. It uses a session flag and respects reduced motion. The existing looping story, transparent oscillating glass and scroll-linked section treatments remain. Narrow/short screens and reduced-motion preferences use static fallbacks. The existing “Motion & accessibility” links expose the saved preference controls.
+
+The site renders key content before JavaScript. Contact prepares an email draft or opens WhatsApp (+234 706 192 7188); messages are sent only when the visitor chooses to send them. Google Translate links open the selected published page in an external tab. Translation is automatic; English remains the original. No paid translation API, analytics or embedded chat SDK is added.
+
+## Architecture and checks
+
+Next.js App Router, React and TypeScript. Development/build use webpack; the existing portable `next.config.mjs` and security headers are retained. Server-rendered project content adds no client-side data API.
+
+`check:build` checks all six page routes, metadata, canonical URLs, landmarks, links, unique IDs, contact details, PADI disclosures, sitemap, project figures/provenance, welcome integration, privacy disclosures and security configuration. Existing enquiry, clear-path and interaction tests remain in `scripts/`.
+
+## Update and publish
+
+A source ZIP is not a Git checkout. Apply the supplied update into the existing repository, preserving `.git`, environment files and independent work. The backup-first PowerShell helper remains available; if script execution is disabled, follow the included manual-copy instructions rather than changing system security settings.
+
+Review local builds, actual mobile/desktop behavior, public links and `git diff` before committing. Check the active branch and the hosting-connected production branch before pushing. Do not force-push to resolve divergent copies. Production publishing and any hosting/DNS/email changes require an explicit release decision.
+
+## Source packaging
+
+`node scripts/make-upgrade-manifest.mjs` regenerates the source manifest without requiring Git, including `.gitignore`. It excludes Git internals and agent-instruction files. Source deliveries exclude `.git`, `.idea`, `.next`, `node_modules`, environment files and credentials.

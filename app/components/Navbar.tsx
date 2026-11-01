@@ -3,6 +3,7 @@ import Brand from "./Brand";
 import Arrow from "./Arrow";
 import MobileMenu from "./MobileMenu";
 import ExpertiseMenu from "./experience/ExpertiseMenu";
+import LanguageSelector from "./experience/LanguageSelector";
 export default function Navbar() {
   return (
     <header className="site-header">
@@ -10,6 +11,7 @@ export default function Navbar() {
         <Brand />
         <nav aria-label="Main navigation" className="desktop-nav">
           <Link href="/#philosophy">About</Link>
+          <Link href="/work">Work</Link>
           <ExpertiseMenu />
           <Link href="/#lab">The Lab</Link>
           <Link href="/padi">
@@ -19,7 +21,7 @@ export default function Navbar() {
             Let’s talk <Arrow />
           </Link>
         </nav>
-        <MobileMenu />
+        <div className="header-actions"><LanguageSelector /><MobileMenu /></div>
       </div>
     </header>
   );

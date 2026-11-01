@@ -1,10 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import { execFileSync } from "node:child_process";
-const tracked = execFileSync("git", ["ls-files"], { encoding: "utf8" })
-  .trim()
-  .split(/\r?\n/);
-const files = new Set(tracked.map((file) => file.split(path.sep).join("/")));
+// Source ZIPs do not contain .git. Enumerate managed source explicitly.
+const files = new Set();
 for (const dir of ["app", "public", "scripts", "docs", "lib"]) {
   for (const entry of fs.readdirSync(dir, { recursive: true })) {
     const file = path.join(dir, entry);
@@ -16,13 +13,19 @@ for (const file of [
   "next.config.mjs",
   "Apply-Local-Update.ps1",
   "upgrade-manifest.json",
+  ".gitignore",
+  "package.json",
+  "package-lock.json",
+  "tsconfig.json",
+  "postcss.config.mjs",
+  "eslint.config.mjs",
 ])
   files.add(file);
 const managed = [...files]
   .filter(
     (file) =>
       (file === "upgrade-manifest.json" || fs.existsSync(file)) &&
-      !file.startsWith(".git") &&
+      file !== ".git" && !file.startsWith(".git/") &&
       !file.startsWith("AGENTS") &&
       !file.startsWith("CLAUDE"),
   )

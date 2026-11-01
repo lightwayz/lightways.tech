@@ -1,0 +1,21 @@
+.first-opening { position:fixed; inset:0; width:100%; max-width:none; height:100%; max-height:none; margin:0; border:0; padding:32px 20px; background:#090a08; color:#f5f5ee; overflow:auto; }
+.first-opening::backdrop { background:#090a08; }
+.first-opening-accessible { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+.first-opening-centre { position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100%; text-align:center; }
+.first-opening-wordmark { display:flex; justify-content:center; font-size:clamp(2.1rem,8vw,7.5rem); line-height:1.1; letter-spacing:-.06em; font-weight:500; margin-top:28px; }
+.first-opening-wordmark span { display:inline-block; }
+.first-opening-domain { color:#ffd700; }
+.first-opening-centre > p { margin-top:24px; color:#b5b8aa; font-size:clamp(.75rem,2vw,1rem); max-width:36ch; line-height:1.8; }
+.first-opening-line { display:block; width:80px; height:1px; background:#ffd700; margin-top:32px; transform-origin:left; }
+.first-opening-dots { position:absolute; inset:0; overflow:hidden; pointer-events:none; }
+.first-opening-dots i { position:absolute; display:block; border-radius:50%; background:#ffd700; opacity:.25; box-shadow:0 0 12px 3px #ffd70038; }
+html[data-opening=active] .brand-introduction * { animation-play-state:paused!important; }
+@media (prefers-reduced-motion:no-preference) {
+  html:not([data-motion=reduced]) .first-opening[open] .first-opening-dots i { animation:lw-opening-dot 2.6s ease-in-out both; }
+  html:not([data-motion=reduced]) .first-opening[open] .first-opening-wordmark span { animation:lw-opening-letter .7s cubic-bezier(.2,.65,.3,1) both; }
+  html:not([data-motion=reduced]) .first-opening[open] .first-opening-line { animation:lw-opening-line 2.4s .4s both; }
+  @keyframes lw-opening-dot { 0% { opacity:0; transform:translateY(10px) scale(.5); } 40%,70% { opacity:.4; } 100% { opacity:.2; transform:translateY(-8px) scale(1); } }
+  @keyframes lw-opening-letter { from { opacity:0; transform:translateY(18px); filter:blur(5px); } to { opacity:1; transform:translateY(0); filter:blur(0); } }
+  @keyframes lw-opening-line { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+}
+@media print { .first-opening { display:none!important; } }

@@ -1,0 +1,23 @@
+/* Native sticky reading space: no wheel interception, timers or scroll locking. */
+.hero:has(.glass-reading-track) { overflow:clip; }
+.glass-reading-track { position:relative; margin-top:12px; }
+.glass-reading-card { position:relative; isolation:isolate; width:100%; padding:clamp(28px,4.5vw,64px); border:3px solid #ffd70052; border-radius:56px 16px 56px 16px; background:#11120fed; box-shadow:0 28px 90px #0007,inset 0 2px 0 #ffffff18,inset 0 -3px 0 #ffd70010; transform-origin:50% 50%; }
+.glass-statement-mark { position:absolute; top:-20px; right:32px; font-family:Georgia,serif; font-size:180px; line-height:1; color:#ffd70016; pointer-events:none; z-index:-1; }
+.glass-reading-card::before { content:""; position:absolute; inset:0; border-radius:inherit; z-index:-1; pointer-events:none; background:linear-gradient(135deg,#ffffff08,transparent 45%,#ffd70005); }
+@supports ((backdrop-filter:blur(16px)) or (-webkit-backdrop-filter:blur(16px))) { .glass-reading-card { background:#11120fc4; -webkit-backdrop-filter:blur(16px); backdrop-filter:blur(16px); } }
+.glass-reading-card .hero-opening-message { margin-top:28px; padding-left:22px; border-left:1px solid var(--yellow); max-width:950px; }
+.hero-headline-scene { position:relative; isolation:isolate; display:flow-root; }
+.hero-headline-scene > .hero-art { inset:0; z-index:-1; }
+.glass-reading-card .hero-opening-statement { font-size:clamp(1.35rem,2.2vw,2rem); }
+.glass-reading-card .hero-opening-message > p:nth-child(2) { color:#c0c3b7; }
+.glass-reading-progress { display:block; height:1px; background:#ffd70022; margin-top:28px; overflow:hidden; }
+.glass-reading-progress > span { display:block; width:100%; height:100%; background:var(--yellow); transform:scaleX(var(--reading-progress,0)); transform-origin:left; }
+@media (min-width:1001px) and (min-height:760px) and (prefers-reduced-motion:no-preference) {
+  html:not([data-motion=reduced]) .glass-reading-track[data-sticky=true] { padding-bottom:var(--reading-hold,0px); }
+  html:not([data-motion=reduced]) .glass-reading-track[data-sticky=true] .glass-reading-card { position:sticky; top:var(--reading-top,120px); transform:translate3d(var(--reading-sway,0px),var(--reading-drift,0px),0) rotate(var(--reading-tilt,0deg)); }
+}
+@media (max-width:600px) { .glass-reading-card { padding:28px 20px; border-radius:32px 12px 32px 12px; border-width:2px; } .glass-statement-mark { right:16px; font-size:120px; } .glass-reading-card .eyebrow { line-height:1.8; } .glass-reading-card .hero-opening-message { margin-top:22px; padding-left:16px; } }
+@media (prefers-reduced-motion:reduce) { .glass-reading-track { padding-bottom:0!important; } .glass-reading-card { position:relative!important; transform:none!important; } }
+html[data-motion=reduced] .glass-reading-track { padding-bottom:0!important; }
+html[data-motion=reduced] .glass-reading-card { position:relative!important; transform:none!important; }
+@media print { .glass-reading-track { padding-bottom:0!important; } .glass-reading-card { position:relative!important; transform:none!important; background:transparent; box-shadow:none; backdrop-filter:none; } .glass-reading-progress { display:none; } }

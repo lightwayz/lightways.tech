@@ -6,6 +6,7 @@ import Capabilities from "./components/Capabilities";
 import Process from "./components/Process";
 import Lab from "./components/Lab";
 import CTA from "./components/CTA";
+import ProjectEvidence from "./components/ProjectEvidence";
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 const companyData = {
   "@context": "https://schema.org",
@@ -37,6 +38,7 @@ export default function Home() {
         }}
       />
       <Hero />
+      <ProjectEvidence />
       <Philosophy />
       <Services />
       <Capabilities />

@@ -1,0 +1,38 @@
+export const projects = [
+  {
+    slug: "energywallet-ticket-centre",
+    name: "EnergyWallet Ticket Centre",
+    category: "EVENT TICKETING / PRODUCTION PLATFORM",
+    url: "https://tickets.energywalletng.com/",
+    domain: "tickets.energywalletng.com",
+    headline: "Built for events. Used in the real world.",
+    summary: "An event-ticketing platform built from scratch and taken through to production, with real transaction and ticket activity reported across events held so far.",
+    role: "End-to-end build and production deployment",
+    context: "Event operations need more than a public-facing page. Ticket activity, transactions and the people using the product have to be considered together as part of one delivery.",
+    delivery: "Lightways delivered the platform from scratch through production. Security hardening formed part of the delivery, alongside the work of turning the product into an operational platform.",
+    outcome: "The platform has been used for events with more than 7,400 transactions and more than 15,000 tickets handled, according to figures supplied by Lightways. The ticket figure spans issuance, sales and receipt.",
+    lesson: "A production product is a continuing responsibility. Maintainability, security review and a clear route for future change belong in the delivery conversation, alongside the first release.",
+    metrics: [{ value: "7,400+", label: "Transactions" }, { value: "15,000+", label: "Tickets handled" }],
+    evidenceNote: "Cumulative usage figures supplied by Lightways on 31 October 2026. Ticket volume covers issuance, sales and receipt.",
+    mark: "EW",
+  },
+  {
+    slug: "unic-law-firm",
+    name: "UNIC Law Firm",
+    category: "PROFESSIONAL SERVICES / DIGITAL PLATFORM",
+    url: "https://www.uniclawfirm.com/",
+    domain: "uniclawfirm.com",
+    headline: "A digital foundation for a professional practice.",
+    summary: "A production website and digital entry point for UNIC Law Firm, built from scratch to bring the practice’s public information and digital service journey together.",
+    role: "End-to-end build and production deployment",
+    context: "Professional services depend on clear information and a considered route into the next step. The project brought that public-facing experience into a dedicated digital platform.",
+    delivery: "Lightways built and deployed the project from scratch. The public site brings together service information and entry points into the firm’s digital case journey.",
+    outcome: "The delivered website is publicly accessible. It presents the firm’s services and describes a journey from case selection and document submission through to progress tracking.",
+    lesson: "Useful technology should fit the responsibilities of the people relying on it. Clear communication, appropriate information handling and agreed ownership matter as much as a polished interface.",
+    metrics: [],
+    evidenceNote: "Project contribution confirmed by Lightways. Public interface descriptions checked against uniclawfirm.com on 31 October 2026.",
+    mark: "UNIC",
+  },
+] as const;
+
+export type Project = (typeof projects)[number];
